@@ -14,8 +14,11 @@ class Room(models.Model):
     name = models.CharField(max_length=200)  # имя комнаты
     description = models.TextField(null=True, blank=True)  # описание о комнате, может быть пустое
     # participants = # хранит данные о юзерах, которые находятся в данный момент в комнате
-    update = models.DateField(auto_now=True)  # auto_now срабатывает каждый раз, когда мы изменяем запись в таблице
+    updated = models.DateField(auto_now=True)  # auto_now срабатывает каждый раз, когда мы изменяем запись в таблице
     created = models.DateField(auto_now_add=True)  # auto_now_add - работает 1 раз при создании записи в таблице
+
+    class Meta:
+        ordering = ['-updated', '-created']
 
     def __str__(self):
         return self.name
