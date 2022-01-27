@@ -13,7 +13,7 @@ class Room(models.Model):
     topic = models.ForeignKey(Topic, on_delete=models.SET_NULL, null=True) # тема комнаты
     name = models.CharField(max_length=200)  # имя комнаты
     description = models.TextField(null=True, blank=True)  # описание о комнате, может быть пустое
-    # participants = # хранит данные о юзерах, которые находятся в данный момент в комнате
+    participants = models.ManyToManyField(User, related_name='participants', blank=True)# хранит данные о юзерах, которые находятся в данный момент в комнате
     updated = models.DateField(auto_now=True)  # auto_now срабатывает каждый раз, когда мы изменяем запись в таблице
     created = models.DateField(auto_now_add=True)  # auto_now_add - работает 1 раз при создании записи в таблице
 
