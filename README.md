@@ -35,3 +35,6 @@
    1) в setting.py добавлен папка для хранения static files
    2) добавлена стилизация в main.css
    3) Изменена RoomForm для createRoom view
+
+7. Seventh commit
+   Добавлена стилизация из интеренета ресурса
